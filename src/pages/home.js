@@ -1,6 +1,14 @@
 import { Dish, foodList } from "../resources/foodlist.js";
 
-export function generateRestaurantInfo() {
+export function generateHome() {
+    const tabSpecificContent = document.createElement('div');
+    tabSpecificContent.classList.add('tab-specific-content')
+    const main = document.createElement('main');
+    tabSpecificContent.append(main, generateRestaurantInfo());
+    return tabSpecificContent;
+}
+
+function generateRestaurantInfo() {
     const infoHolder = document.createElement('div');
     infoHolder.classList.add('info-holder');
     const description = document.createElement('p');

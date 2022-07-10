@@ -1,11 +1,10 @@
 import gitHubImage from '../images/githublogo.png'
-
-import { generateRestaurantInfo } from './home.js'
+import { generateContact } from './contact.js'
+import { generateHome } from './home.js'
 
 
 const website = document.getElementById('content');
 const navBar = document.createElement('nav-bar');
-const main = document.createElement('main');
 
 
 function generateFooter() {
@@ -37,5 +36,5 @@ export function websiteInitialize() {
     buttonGenerator('home');
     buttonGenerator('menu');
     buttonGenerator('contact');
-    website.append(navBar, main, generateRestaurantInfo(), generateFooter());
+    website.append(navBar, generateHome(), generateFooter());
 }
