@@ -5,9 +5,6 @@ module.exports = {
     mode: 'development',
     entry: {
         index: './src/index.js',
-        contact: './src/pages/contact.js',
-        home: './src/pages/home.js',
-        menu: './src/pages/menu.js'
     },
     plugins: [
 
@@ -19,6 +16,9 @@ module.exports = {
         }),
 
     ],
+
+
+
 
     devtool: 'inline-source-map',
 

@@ -1,4 +1,4 @@
-const div = document.querySelector('div');
-const text = 'chleb';
-div.append(text);
+import css from "./style.css";
+import { websiteInitialize } from './pages/website.js'
 
+websiteInitialize();
