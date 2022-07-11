@@ -1,5 +1,7 @@
 # Restaurant-Page
 
+### Live Demo: https://finestedm.github.io/Restaurant-Page/
+
 This is a project created for TheOdinProject which teaches:
 1. Webpack
 2. Single Responsibility Principle
