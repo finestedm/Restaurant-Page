@@ -181,14 +181,19 @@ nav-bar {
 
 .tab-button {
     background: none;
+    padding: .25rem .5rem;
     font-size: 1.5rem;
     font-weight: 600;
     border: none;
     transition: all .3s ease;
+    border: 2px solid #00000000;
+    border-radius: 2rem;
 }
 
 .tab-button:hover {
     color: #c29767;
+    border: 2px solid #c29767;
+    border-radius: 2rem;
 }
 
 main {
@@ -222,6 +227,7 @@ main {
     padding: 3rem 10%;
     margin: 3rem 0;
     text-align: center;
+    line-height: 2.25rem;
 }
 
 .tab-specific-content p strong {
@@ -235,16 +241,17 @@ main {
 
 }
 
-.food-examples {
+.food-examples,
+.menu-holder {
     display: grid;
-    grid-template-rows: 400px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin: 2rem 0;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin: 2rem;
+    gap: 1rem;
     justify-items: center;
 }
 
-.food-examples li {
+.food-examples li,
+.menu-holder li {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -256,14 +263,18 @@ main {
     max-width: 500px;
     max-height: 500px;
     transition: all .3s ease;
+    margin: 1rem;
 }
 
-.food-examples li:hover {
+.food-examples li:hover,
+.menu-holder li:hover {
     scale: 1.02;
     background-color: #15161C;
+    box-shadow: 0 0 40px hsla(0, 0%, 100%, 0.2);
 }
 
-.food-examples li h2 {
+.food-examples li h2,
+.menu-holder li h2 {
     font-family: 'Pacifico';
     font-size: 2.25rem;
     transition: all .3s ease;
@@ -272,14 +283,16 @@ main {
 
 }
 
-.food-examples li h3 {
+.food-examples li h3,
+.menu-holder li h3 {
     font-size: 1rem;
     font-weight: 600;
     transition: all .3s ease;
 
 }
 
-.food-examples li span {
+.food-examples li span,
+.menu-holder li span {
     font-size: .85rem;
     font-weight: 200;
     font-style: italic;
@@ -289,11 +302,14 @@ main {
 
 .food-examples li:hover h2,
 .food-examples li:hover h3,
-.food-examples li:hover span {
+.food-examples li:hover span,
+.menu-holder li:hover h3,
+.menu-holder li:hover span {
     color: #E0E0CE;
 }
 
-.food-examples img {
+.food-examples img,
+.menu-holder img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -302,16 +318,33 @@ main {
 
 }
 
+.contact-info {
+    gap: 1rem;
+}
+
 .contact-info li:first-child {
     font-size: 3rem;
     font-family: 'Pacifico';
 }
 
-.git-hub-logo {
-    height: 2rem;
-}
+
 
 footer {
     grid-area: footer;
-    background-color: black;
+    background-color: #15161C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+footer a {
+    font-size: 1rem;
+    color: #999999
+}
+
+footer>.git-hub-logo {
+    height: 1.7rem;
+    filter: brightness(.6)
 }

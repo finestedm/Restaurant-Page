@@ -1,4 +1,4 @@
-const contactDetails = ['name', 'generic-address1', 'generic-address2', '+48 000 000 000', 'generic@mail.com']
+const contactDetails = ['Generic Restaurant', 'generic-address1', 'generic-address2', '<a href="tel:+48 000 000 000">+48 000 000 000</a>', '<a href="mailto:generic@mail.com">generic@mail.com</a>']
 
 export function generateContact() {
     const contactInfoHolder = document.createElement('ul');

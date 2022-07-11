@@ -1,6 +1,7 @@
 import gitHubImage from '../images/githublogo.png'
 import { generateContact } from './contact.js'
 import { generateHome } from './home.js'
+import { generateMenu } from './menu';
 
 
 export const website = document.getElementById('content');
@@ -20,34 +21,41 @@ function generateFooter() {
     return footer;
 }
 
+function replaceTabSpecificContent(buttonName) {
+    try {
+        document.querySelector('.tab-specific-content').remove();
+        switch (buttonName) {
+            case 'Home':
+                website.append(generateHome());
+                break;
+            case 'Contact':
+                website.append(generateContact());
+                break;
+            case 'Menu':
+                website.append(generateMenu());
+                break;
+        }
+    } catch (e) {
+        switch (buttonName) {
+            case 'Home':
+                website.append(generateHome());
+                break;
+            case 'Contact':
+                website.append(generateContact());
+                break;
+            case 'Menu':
+                website.append(generateMenu());
+                break;
+        };
+    }
+}
 
 export function buttonGenerator(buttonName) {
     const tabButton = document.createElement('button');
     tabButton.classList.add('tab-button');
     tabButton.setAttribute('id', buttonName);
     tabButton.innerHTML = buttonName;
-    tabButton.addEventListener('click', () => {         // send it all to the separate function!!!
-        try {
-            document.querySelector('.tab-specific-content').remove();
-            switch (buttonName) {
-                case 'Home':
-                    website.append(generateHome()); // generateHome should not require website.append...
-                    break;
-                case 'Contact':
-                    website.append(generateContact()); // generateContact should not require website.append...
-                    break;
-            }
-        } catch (e) {
-            switch (buttonName) {
-                case 'Home':
-                    website.append(generateHome()); // generateHome should not require website.append...
-                    break;
-                case 'Contact':
-                    website.append(generateContact()); // generateContact should not require website.append...
-                    break;
-            };    // in future here we will send a request to switch tab content
-        }
-    })
+    tabButton.addEventListener('click', (e) => { replaceTabSpecificContent(buttonName) })
     navBar.append(tabButton);
 }
 

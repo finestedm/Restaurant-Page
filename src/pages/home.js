@@ -1,5 +1,6 @@
 import { Dish, foodList } from "../resources/foodlist.js";
 import { website } from "./website.js";
+import { foodListObjects } from "../resources/foodlist.js";
 
 export function generateHome() {
     const tabSpecificContent = document.createElement('div');
@@ -17,11 +18,7 @@ function generateRestaurantInfo() {
     const foodExamples = document.createElement('ul');
     foodExamples.classList.add('food-examples');
 
-    const firstDish = new Dish(foodList[0][0], foodList[0][1], foodList[0][2], foodList[0][3]); // later here we will put a function that will generate cards from 3 random chosen dishes
-    const secondDish = new Dish(foodList[1][0], foodList[1][1], foodList[1][2], foodList[1][3]); // later here we will put a function that will generate cards from 3 random chosen dishes
-
-
-    foodExamples.append(firstDish.foodCard, secondDish.foodCard);
+    foodExamples.append(foodListObjects[0].foodCard, foodListObjects[1].foodCard, foodListObjects[2].foodCard);
     infoHolder.append(description, foodExamples);
 
     return infoHolder;
