@@ -3,7 +3,7 @@ import { generateContact } from './contact.js'
 import { generateHome } from './home.js'
 
 
-const website = document.getElementById('content');
+export const website = document.getElementById('content');
 const navBar = document.createElement('nav-bar');
 
 
@@ -26,15 +26,34 @@ export function buttonGenerator(buttonName) {
     tabButton.classList.add('tab-button');
     tabButton.setAttribute('id', buttonName);
     tabButton.innerHTML = buttonName;
-    tabButton.addEventListener('click', () => {
-        console.log(buttonName);    // in future here we will send a request to switch tab content
+    tabButton.addEventListener('click', () => {         // send it all to the separate function!!!
+        try {
+            document.querySelector('.tab-specific-content').remove();
+            switch (buttonName) {
+                case 'Home':
+                    website.append(generateHome()); // generateHome should not require website.append...
+                    break;
+                case 'Contact':
+                    website.append(generateContact()); // generateContact should not require website.append...
+                    break;
+            }
+        } catch (e) {
+            switch (buttonName) {
+                case 'Home':
+                    website.append(generateHome()); // generateHome should not require website.append...
+                    break;
+                case 'Contact':
+                    website.append(generateContact()); // generateContact should not require website.append...
+                    break;
+            };    // in future here we will send a request to switch tab content
+        }
     })
     navBar.append(tabButton);
 }
 
 export function websiteInitialize() {
-    buttonGenerator('home');
-    buttonGenerator('menu');
-    buttonGenerator('contact');
+    buttonGenerator('Home');
+    buttonGenerator('Menu');
+    buttonGenerator('Contact');
     website.append(navBar, generateHome(), generateFooter());
 }

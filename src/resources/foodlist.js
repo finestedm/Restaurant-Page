@@ -12,7 +12,7 @@ export class Dish {
     }
 
     get foodCard() {
-        const card = document.createElement('card');
+        const card = document.createElement('li');
         const foodTitle = document.createElement('h2');
         foodTitle.innerHTML = this.name;
         const foodSubTitle = document.createElement('h3');
