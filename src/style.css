@@ -221,7 +221,7 @@ main {
 
 .tab-specific-content p {
 
-    background-color: #15161C;
+    background-color: #1a1b22;
     font-size: 1.3rem;
     font-weight: 300;
     padding: 3rem 10%;
@@ -245,6 +245,7 @@ main {
 .menu-holder {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
     margin: 2rem;
     gap: 1rem;
     justify-items: center;
@@ -257,11 +258,9 @@ main {
     justify-content: center;
     align-items: center;
     padding: 1.5rem;
-    background-color: #15161C;
+    background-color: #1a1b22;
     border-radius: 1rem;
     gap: .5rem;
-    max-width: 500px;
-    max-height: 500px;
     transition: all .3s ease;
     margin: 1rem;
 }
@@ -269,8 +268,7 @@ main {
 .food-examples li:hover,
 .menu-holder li:hover {
     scale: 1.02;
-    background-color: #15161C;
-    box-shadow: 0 0 40px hsla(0, 0%, 100%, 0.2);
+    box-shadow: 0 0 40px hsla(0, 0%, 100%, 0.25);
 }
 
 .food-examples li h2,
