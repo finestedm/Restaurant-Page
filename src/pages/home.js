@@ -1,10 +1,20 @@
 import { Dish, foodList } from "../resources/foodlist.js";
 import { website } from "./website.js";
 import { foodListObjects } from "../resources/foodlist.js";
+let generatedRandomNumbers = [];
+
+(function generateRandomNumber() {
+    while (generatedRandomNumbers.length < 3) {
+        let picked = Math.floor(Math.random() * foodListObjects.length);
+        if (generatedRandomNumbers.includes(picked) === false) {
+            generatedRandomNumbers += picked;
+        }
+    }
+})();
 
 export function generateHome() {
     const tabSpecificContent = document.createElement('div');
-    tabSpecificContent.classList.add('tab-specific-content')
+    tabSpecificContent.classList.add('tab-specific-content', 'home')
     const main = document.createElement('main');
     tabSpecificContent.append(main, generateRestaurantInfo());
     return tabSpecificContent;
@@ -18,8 +28,13 @@ function generateRestaurantInfo() {
     const foodExamples = document.createElement('ul');
     foodExamples.classList.add('food-examples');
 
-    foodExamples.append(foodListObjects[0].foodCard, foodListObjects[1].foodCard, foodListObjects[2].foodCard);
+    for (let i = 0; i < 3; i++) {
+        foodExamples.append(foodListObjects[generatedRandomNumbers[i]].foodCard)
+    }
+
     infoHolder.append(description, foodExamples);
 
     return infoHolder;
 }
+
+

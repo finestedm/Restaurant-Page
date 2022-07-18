@@ -1,6 +1,8 @@
 import spaghettiPhoto from '../images/spaghetti.jpg'
 import lasagnePhoto from '../images/lasagne.jpg'
 import ciacioPhoto from '../images/Cacio-e-Pepe.jpeg'
+import pizza from '../images/pizza.jpg'
+import minestrone from '../images/minestrone.jpg'
 
 
 export let foodListObjects = []
@@ -37,7 +39,10 @@ export class Dish {
 export const foodList = [
     ['Spaghetti', 'Pasta with tomato sauce', 'Pasta, tomatoes, bla bla bla', spaghettiPhoto],
     ['Lasagne', 'Pasta with tomato sauce, but different', 'Pasta, tomatoes, bla bla bla', lasagnePhoto],
-    ['Cacio e Pepe', 'Literally “cheese and pepper,”', 'Pasta, pepper, Pecorino cheese, Grana Padano cheese', ciacioPhoto]
+    ['Cacio e Pepe', 'Literally “cheese and pepper”', 'Pasta, pepper, Pecorino cheese, Grana Padano cheese', ciacioPhoto],
+    ['Pizza', 'Dish of Italian origin with round, flat base', 'Wheat-based dough topped with tomatoes, cheese', pizza],
+    ['Minestrone', 'Thick soup made with vegetables', 'Beans, onions, celery, carrots, leaf vegetables, stock, parmesan cheese and tomatoes', minestrone]
+
 ]
 
 for (let i = 0; i < foodList.length; i++) {
