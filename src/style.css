@@ -214,7 +214,6 @@ main {
     grid-area: tab-specific-content;
     width: 100%;
     display: flex;
-
     align-items: center;
     justify-content: center;
 }
@@ -252,17 +251,14 @@ main {
     flex-wrap: wrap;
     margin: 2rem;
     gap: 1rem;
-    justify-content: center;
+    justify-items: center;
 }
 
 .food-examples li,
 .menu-holder li {
-    display: flex;
-    flex: 1 1 400px;
-    max-height: 400px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex: 1 0 400px;
+    max-height: 90%;
+    text-align: center;
     padding: 1.5rem;
     background-color: #1a1b22;
     border-radius: 1rem;
@@ -315,6 +311,7 @@ main {
 .food-examples img,
 .menu-holder img {
     height: 100%;
+    max-height: 325px;
     width: 100%;
     object-fit: cover;
     border-radius: .5rem;
